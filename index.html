@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Task List</title>
+</head>
+
+<body>
+    
+    <header>
+        <div id="mobile-menu">
+            <span id="close-button-container">
+            <img src="images/close-icon.png" onclick="closeMenu()" width="15px">
+            </span>
+            <div id="profile">
+                <img src="images/profile-icon.png" width="64px">
+                <span>
+                    <h2>Seu nome</h2>
+                    <h4>Alterar perfil</h4>
+                </span>
+            </div>
+            <ul>
+                <li><a style="cursor: pointer;" onclick="openNewTask()"><img src="images/task-add-icon.png">nova tarefa</a></li>
+                <li><a href="#" onclick="openProgressTask()"><img src="images/task-progress-icon.png">progresso</a></li>
+                <li><a href="#" onclick="openEditTask()"><img src="images/task-edit-icon.png">Editar tarefa</a></li>
+            </ul>
+        </div>
+
+        <nav id="navbar">
+            <a href="index.html"><h1>TASKS</h1></a>
+            <ul>
+                <span>
+                <input type="text" id="search-bar">
+                <li><img style="cursor: pointer;" id="search-button" src="images/search-icon.png"></li>
+                <li><img style="cursor: pointer;" id="mobile-menu-button" onclick="openMenu()" src="images/menu-bars.png"></li>
+                </span>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div id="side-menu">
+            <ul>
+                <li><a style="cursor: pointer;" onclick="openNewTask()"><img src="images/task-add-icon.png">nova tarefa</a></li>
+                <li><a href="#" onclick="openProgressTask()"><img src="images/task-progress-icon.png">progresso</a></li>
+                <li><a href="#" onclick="openEditTask()"><img src="images/task-edit-icon.png">Editar tarefa</a></li>
+            </ul>
+        </div>
+        <div id="task-list">
+            <span id="task-title">
+                <h3>Todas as Tarefas</h3>
+                <img src="images/tasks-icon.png" width="25px">
+            </span>
+            <ul id="tasks">
+            </ul>
+        </div>
+    </main>
+    
+    <div id="new-task-container" class="task-window">
+        <div id="new-task">
+            <div class="task-top">
+            <h4>Nova Tarefa</h4>
+            <a id="close-button" style="cursor: pointer;"><img src="images/close-icon.png" width="15px"></a>
+            </div>
+            <div class="task-input">
+            <label for="task">Nome</label>
+            <input type="text" id="task" maxlength="30">   
+            <label for = "comment">Comentários</label>
+            <textarea id="comment" maxlength="244"></textarea>
+            </div>
+            <div class="task-bottom">
+            <label for="priority">Prioridade:</label>
+            <select id="priority">
+                <option value="Baixa">Baixa</option>
+                <option value="Média">Média</option>
+                <option value="Alta">Alta</option>
+            </select>
+            <span class="task-button">
+            <a id="create-task" style="cursor: pointer;">Criar tarefa</a>
+            </span>
+        </div>
+        </div>
+    </div>
+    <div id="edit-task-container" class="task-window">
+        <div id="edit-task">
+            <div class="task-top">
+            <h4>Editar Tarefa</h4>
+            <a id="close-button-edit" style="cursor: pointer;"><img src="images/close-icon.png" width="15px"></a>
+            </div>
+
+            <div id="select-container">
+                <select id="select-task"></select>
+            </div>
+
+            <div class="task-input">
+                <label for="editname">Nome</label>
+                <input type="text" id="editname" maxlength="50">   
+                <label for = "editcomment">Comentários</label>
+                <textarea id="editcomment" maxlength="244"></textarea>
+            </div>
+            <div class="task-bottom">
+                
+                <span class="task-button">
+                <a id="edit-task-button" style="cursor: pointer;">Editar tarefa</a>
+                </span>
+            </div>
+        </div>
+    </div>
+    <div id="progress-task-container"  class="task-window">
+        <div id="progress-task">
+            <div class="task-top">
+                <h4>Progresso</h4>
+                <a id="close-button-progress" style="cursor: pointer;"><img src="images/close-icon.png" width="15px"></a>
+            </div>
+            <div id="percentage-text">
+            <span><h4 id="percentage">Porcentagem</h4></span>
+            <h4>De tarefas concluídas</h4>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script src="index.js"></script>
+
+</html>
