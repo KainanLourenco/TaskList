@@ -16,11 +16,55 @@ body{
     font-family: 'Work Sans', sans-serif;
     color: #6C7170;
     min-height: 100vh;
+    min-height: -moz-available;          
+    min-height: -webkit-fill-available;
+    min-height: fill-available;
 }
 
 ::selection{
     background: #39DACF;
     color: white;
+}
+
+html{
+    min-height: -moz-available;          
+    min-height: -webkit-fill-available;
+    min-height: fill-available;
+}
+
+/* Dark Theme */
+
+body.dark-theme{
+    background-color: #101318;
+}
+
+#side-menu.dark-theme, #navbar.dark-theme, #task-list.dark-theme, #new-task.dark-theme, #edit-task.dark-theme, #progress-task.dark-theme, #new-task.dark-theme input, #new-task.dark-theme textarea, #new-task.dark-theme select, #edit-task.dark-theme input, #edit-task.dark-theme textarea, #edit-task.dark-theme select, #mobile-menu[alt="dark-theme"]{
+    background-color: #1F1F1F;
+    color: #909493;
+}
+
+#side-menu.dark-theme li a:hover{
+    background-color: #00463B;
+}
+
+#new-task #create-task.dark-theme{
+    background-color: #00463B;
+}
+
+#new-task #create-task.dark-theme:hover{
+    background-color: #012b24;
+}
+
+#edit-task-button.dark-theme{
+    background-color: #00463B;
+}
+
+#edit-task-button.dark-theme:hover{
+    background-color: #012b24;
+}
+
+label[for="task"].dark-theme{
+    color: #909493;
 }
 
 /* NavBar */
@@ -56,6 +100,7 @@ header{
 }
 
 #navbar h1{
+    height: 100%;
     padding: 15px 35px;
     display: flex;
     align-items: center;
@@ -110,7 +155,7 @@ main{
 }
 
 #side-menu ul{
-    margin-top: 100px;
+    margin-top: 50px;
 }
 
 #side-menu ul li a{
@@ -339,6 +384,7 @@ main{
 #new-task #create-task:hover{
     background-color: #30afa7;
 }
+
 
 .task-button{
     display: flex;

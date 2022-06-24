@@ -64,6 +64,14 @@ sideButtons[2].addEventListener('mouseleave', function(){
 sideButtonsImage[2].src = "images/task-edit-icon.png";
 } );
 
+sideButtons[3].addEventListener('mouseover', function(){
+    sideButtonsImage[3].src = "images/theme-icon-hover.png";
+} );
+
+sideButtons[3].addEventListener('mouseleave', function(){
+sideButtonsImage[3].src = "images/theme-icon.png";
+} );
+
 // Create task
 
 function openNewTask(){
@@ -82,7 +90,7 @@ addButton.addEventListener('click', function(){
         taskPriority.value = 'Baixa';
         taskName.setAttribute('placeholder', '')
         taskName.style.border = '1px solid #a0a0a1';
-        nameText.style.color = 'black';
+        nameText.style.color = '#6C7170';
         taskName.focus();
     }
         
@@ -91,7 +99,7 @@ addButton.addEventListener('click', function(){
 closeButton.addEventListener('click', function(){
     taskName.setAttribute('placeholder', '')
     taskName.style.border = '1px solid #a0a0a1';
-    nameText.style.color = 'black';
+    nameText.style.color = '#6C7170';
     addWindow.style.display = 'none';
 });
 
@@ -300,6 +308,73 @@ function closeMenu(){
 
     mobileMenu.className = 'close-animation';
 }
+
+
+//Change theme
+
+function changeTheme(){
+    
+    const sideMenu = document.querySelector('#side-menu');
+    const body = document.querySelector('body');
+    const navBar = document.querySelector('#navbar');
+    const taskList = document.querySelector('#task-list');
+    const newTask = document.querySelector('#new-task')
+    const editTask = document.querySelector('#edit-task')
+    const progressTask = document.querySelector('#progress-task')
+    const newTaskInput = document.querySelector('#new-task input')
+    const newTaskTextarea = document.querySelector('#new-task textarea')
+    const newTaskSelect = document.querySelector('#new-task select')
+    const editTaskInput = document.querySelector('#edit-task input')
+    const editTaskTextarea = document.querySelector('#edit-task textarea')
+    const editTaskSelect = document.querySelector('#edit-task select')
+    const createButton = document.querySelector('#create-task');
+    const editButton = document.querySelector('#edit-task-button')
+    const label = document.querySelector('label[for = "task"]');
+    const mobileMenu = document.querySelector('#mobile-menu')
+
+    if (sideMenu.className === 'dark-theme'){
+
+        body.className = '';
+        navBar.className = '';
+        sideMenu.className = '';
+        taskList.className = '';
+        newTask.className = '';
+        editTask.className = '';
+        progressTask.className = '';
+        newTaskInput.className = '';
+        newTaskTextarea.className = '';
+        newTaskSelect.className = '';
+        editTaskInput.className = '';
+        editTaskTextarea.className = '';
+        editTaskSelect.className = '';
+        createButton.className = '';
+        editButton.className = '';
+        label.className = '';
+        mobileMenu.setAttribute('alt', '');
+
+    }else{
+
+        body.className = 'dark-theme';
+        navBar.className = 'dark-theme';
+        sideMenu.className = 'dark-theme';
+        taskList.className = 'dark-theme';
+        newTask.className = 'dark-theme';
+        editTask.className = 'dark-theme';
+        progressTask.className = 'dark-theme';
+        newTaskInput.className = 'dark-theme';
+        newTaskTextarea.className = 'dark-theme';
+        newTaskSelect.className = 'dark-theme';
+        editTaskInput.className = 'dark-theme';
+        editTaskTextarea.className = 'dark-theme';
+        editTaskSelect.className = 'dark-theme';
+        createButton.className = 'dark-theme';
+        editButton.className = 'dark-theme';
+        label.className = 'dark-theme';
+        mobileMenu.setAttribute('alt', 'dark-theme');
+
+    }    
+}
+
 
 
 
